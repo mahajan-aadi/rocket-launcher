@@ -32,6 +32,7 @@ public class rocket : MonoBehaviour
 
     private void process_check()
     {
+        if (Input.GetKeyDown(KeyCode.L)) { level_Manager.next_level(); }
         if (Input.GetKey(KeyCode.Space))
         {
             rigidbody.AddRelativeForce(Vector3.up * thrust * Time.deltaTime);
@@ -47,11 +48,10 @@ public class rocket : MonoBehaviour
 
     private void rotate()
     {
+        rigidbody.angularVelocity = Vector3.zero;
         Vector3 rotation_to_do = Vector3.forward * rotation * Time.deltaTime;
-        rigidbody.freezeRotation = true;
         if (Input.GetKey(KeyCode.LeftArrow)) { transform.Rotate(rotation_to_do); }
         if (Input.GetKey(KeyCode.RightArrow)) { transform.Rotate(-rotation_to_do); }
-        rigidbody.freezeRotation = false;
     }
     private void OnCollisionEnter(Collision collision)
     {

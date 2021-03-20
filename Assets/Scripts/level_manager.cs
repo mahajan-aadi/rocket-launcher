@@ -11,6 +11,7 @@ public class level_manager : MonoBehaviour
     }
     public void next_level()
     {
+        if (current_level() == SceneManager.sceneCountInBuildSettings) { return; }
         int current = current_level() + 1;
         StartCoroutine(waiting(current));
     }
@@ -24,14 +25,6 @@ public class level_manager : MonoBehaviour
      /*   level_manager[] list = FindObjectsOfType<level_manager>();
         if (list.Length > 1) { Destroy(this.gameObject); }
         else { DontDestroyOnLoad(this.gameObject); }*/
-    }
-    private void Start()
-    {
-        if (current_level() == 0)
-        {
-            int current = current_level();
-            StartCoroutine(waiting(1));
-        }
     }
     IEnumerator waiting(int current_index)
     {
