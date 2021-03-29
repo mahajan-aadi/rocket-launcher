@@ -10,8 +10,6 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Rr]ocket_launcher.rar/
-/[Gg]ame/
-
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
